@@ -75,7 +75,21 @@ interface Document {
 interface Window {
   cordova:Cordova;
 }
-
+//CordovaApp
+interface CordovaApp {
+    backHistory(): void;
+    cancelLoadUrl(): void;
+    clearCache(): void;
+    clearHistory(): void;
+    exitApp(): void;
+    loadUrl(url, props): void;
+    overrideBackButton(override): void;
+    overrideButton(button, override): void;
+}
+//navigator.app
+interface Navigator {
+    app: CordovaApp;
+}
 // cordova/argscheck module
 interface ArgsCheck {
     checkArgs(argsSpec: string, functionName: string, args: any[], callee?: any): void;
